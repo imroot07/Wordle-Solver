@@ -6,7 +6,7 @@ function z() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET',
             url,
-            true);
+           true);
         xhr.responseType = 'json';
         xhr.onload = function() {
             callback(xhr.response);
@@ -38,7 +38,7 @@ function z() {
                             if (char !== '<') {
                                 if (row[l].className == 'Row-letter letter-absent') {
                                     data += '0';
-                                    if (incorrect.indexOf(char) == -1) incorrect[l].push(char);
+                                    if (incorrect[l].indexOf(char) == -1) incorrect[l].push(char);
                                 } else if (row[l].className == 'Row-letter letter-correct') {
                                     data += '1';
                                     correct[l] = char;
@@ -93,12 +93,22 @@ function z() {
                     }
                 }
                 var step3 = [];
+                var wrong = [];
+                for (let i = 0; i < wrong_spot.length; i++) {
+                    for (let l = 0; l < wrong_spot[i].length; l++) {
+                        wrong.push(wrong_spot[i][l]);
+                    }
+                }
                 for (let i = 0; i < step2.length; i++) {
                     var word = step2[i];
                     let bad = false;
                     for (let idx = 0; idx < incorrect.length; idx++) {
                         for (let l = 0; l < incorrect[idx].length; l++) {
-                            if (word[idx] == incorrect[idx][l]) {
+                            if (wrong.indexOf(incorrect[idx][l]) == -1) {
+                                if (word.indexOf(incorrect[idx][l]) !== -1) {
+                                    bad = true;
+                                }
+                            } else if (word[idx] == incorrect[idx][l]) {
                                 bad = true;
                             }
                         }

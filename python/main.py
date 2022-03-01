@@ -13,7 +13,7 @@ if online:
         string = r.text.replace('"', '').replace('[', '').replace(']', '').replace('\n', '')
         dictionary = [word.upper() for word in string.split(',')]
         print('Saving data...')
-        with open(r'./dictionary.txt', 'w') as dictionary_file:
+        with open(r'./python/dictionary.txt', 'w') as dictionary_file:
             for idx, word in enumerate(dictionary):
                 dictionary_file.write(word + '\n')
         print('Dictionary successfully updated.')
@@ -22,7 +22,7 @@ if online:
 print()
 
 dictionary = []
-with open(r'./dictionary.txt') as dictionary_file:
+with open(r'./python/dictionary.txt') as dictionary_file:
     for line in dictionary_file.readlines():
         word = line.replace('\n', '').upper()
         dictionary.append(word)
@@ -45,7 +45,7 @@ correct = []
 incorrect = []
 wrong_spot = []
 
-with open(r'./wordle.txt') as wordle_file:
+with open(r'./python/wordle.txt') as wordle_file:
     lines = wordle_file.readlines()
     for line in lines:
         if line != '\n':

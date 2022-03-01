@@ -1,1 +1,3 @@
-
+crane 00001
+ducks 00010
+plant 01000
