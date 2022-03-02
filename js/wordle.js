@@ -6,7 +6,7 @@ function z() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET',
             url,
-           true);
+            true);
         xhr.responseType = 'json';
         xhr.onload = function() {
             callback(xhr.response);
@@ -55,6 +55,11 @@ function z() {
                         ]);
                     }
                 }
+
+                // correct = ['', 'u', '', '', 'e'];
+                // incorrect = [['d', 't'], ['l'], ['c', 'a'], ['k', 'i', 'n'], ['s', 'n']];
+                // wrong_spot = [['p'], ['r'], [], [], []];
+
                 var length_words = [];
                 for (let i = 0; i < dict.length; i++) {
                     var word = dict[i];
@@ -102,10 +107,16 @@ function z() {
                 for (let i = 0; i < step2.length; i++) {
                     var word = step2[i];
                     let bad = false;
+                    var temp = word;
+                    for (let l = 0; l < correct.length; l++) {
+                        if (word[l] == correct[l]) {
+                            temp = temp.replaceAt(l, '_');
+                        }
+                    }
                     for (let idx = 0; idx < incorrect.length; idx++) {
                         for (let l = 0; l < incorrect[idx].length; l++) {
                             if (wrong.indexOf(incorrect[idx][l]) == -1) {
-                                if (word.indexOf(incorrect[idx][l]) !== -1) {
+                                if (temp.indexOf(incorrect[idx][l]) !== -1) {
                                     bad = true;
                                 }
                             } else if (word[idx] == incorrect[idx][l]) {
@@ -117,19 +128,6 @@ function z() {
                         step3.push(word);
                     }
                 }
-                // if (step3.length == 1) {
-                //     for (let x = 0; x < rows.length; x++) {
-                //     var row = rows[x].children;
-                //     if (rows[x].className == 'Row') {
-                //         for (let l = 0; l < row.length; l++) {
-                //             let d = row[l].innerHTML;
-                //             d = step3[0][l] + d;
-                //             row[l].innerHTML = d;
-                //         }
-                //         break;
-                //     }
-                // }
-                // }
                 alert(step3);
             } catch (err) {
                 alert(err);
