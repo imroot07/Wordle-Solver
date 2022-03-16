@@ -25,4 +25,4 @@ A small project i'm working on that you can use to solve the puzzle game wordle.
 
 ### Links:
 - The wordle website that this project is based off of is https://wordlegame.org
-- There is an example at https://replit.com/@SharkCoding/Wordle-Heck you can also copy the code from here too
+- There is an example at https://replit.com/@SharkCoding/Wordle-Solver you can also copy the code from here too
