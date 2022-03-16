@@ -13,12 +13,12 @@ A small project i'm working on that you can use to solve the puzzle game wordle.
 - However, you have to use https://wordlegame.org or else the code won't work.
 - To use it, create a new book mark and give it a name. (eg. wordlehack)
 - Next, right click on the bookmark and click edit.
-- Now copy the code from `bookmark.min.js` and type `javascript:` in the bookmark and then paste the code.
+- Now copy the code from `bookmarklet.js` and then paste the code into the bookmark.
 - It should look like this:
 
 **Name:** `YourBookMarkNameHere`
 
-**URL:** `javascript:PasteTheCodeHere`
+**URL:** `CodePastedFromFileHere`
 
 - Now if you click on the bookmark it will give you all of the possible worlds left.
 - For the unminified version of the code, open `wordle.js`.
