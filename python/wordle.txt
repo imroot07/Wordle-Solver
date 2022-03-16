@@ -1,3 +1,6 @@
-crane 00001
-ducks 00010
-plant 01000
+train 01100
+lopes 00000
+tempo 00000
+agent 20000
+scorn 00020
+sworn 00020
