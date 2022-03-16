@@ -131,6 +131,9 @@ function z() {
                 alert(step3);
             } catch (err) {
                 alert(err);
+                // optional
+                // I used alert("You are not on the correct page.");
+                // because that is the most common cause of the error
             }
         });
 }
