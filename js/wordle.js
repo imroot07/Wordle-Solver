@@ -1,4 +1,4 @@
-function z() {
+(function () {
     String.prototype.replaceAt = function(index, replacement) {
         return this.substr(0, index) + replacement + this.substr(index + replacement.length);
     }
@@ -136,5 +136,4 @@ function z() {
                 // because that is the most common cause of the error
             }
         });
-}
-z();
+})();
